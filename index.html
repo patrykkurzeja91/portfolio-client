@@ -5,15 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Portfolio Site - D</title>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>Portfolio Site</title>
+  <link rel="shortcut icon" href="/public/img/favicon_black2.png" type="image/x-icon">
 
   {{-- custom css styles --}}
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
     crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="/public/css/__normalize.css">
   <link rel="stylesheet" href="/public/vendor/bootstrap/bootstrap-grid.css">
+  <link rel="stylesheet" href="/public/vendor/Animate.css">
+  <link rel="stylesheet" href="/public/vendor/morphext.css">
   <link rel="stylesheet" href="/public/css/style.min.css">
+
 </head>
 
 <body>
@@ -21,10 +25,27 @@
   <!-- {{--  NAVBAR  --}}
   {{--  =====================================================  --}} -->
 
-  <nav>
+  <nav data-scroll-header>
     <div class="container">
       <ul class="main">
-        <li><a href="#home">Logo</a></li>
+        <li>
+          <a id="brand" href="#home">
+            <svg class="logo" width="100%" height="100%" viewBox="0 0 272 243" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+              <g>
+                <path d="M49,243l27,0l0,-50l53,-52l102,102l37,0l-120,-120.97l124,-121.178l-38,0l-185,181.148" />
+                <path d="M26,243l-26,0l0,-181c0,-35.122 26.218,-62 55,-62l104,0c18.59,4.292 24.807,25.826 14,40l-147,140l0,63Zm122,-216l-89,0c-26.151,0 -33,16.968 -33,35l0,81.464l122,-116.464Z" />
+              </g>
+            </svg>
+            <svg class="logo2" width="100%" height="100%" viewBox="0 0 211 243" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+              <g>
+                <path d="M0,242.148l13,0l65,-242.148l-13,0" />
+                <path d="M88.266,0l16.734,0l106,116.148l-104,126l-15.734,0l102.734,-126" />
+              </g>
+            </svg>
+          </a>
+        </li>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About me</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
@@ -37,10 +58,19 @@
  {{--  =====================================================  --}} -->
   <header id="home" class="section">
     <div class="overlay"></div>
-    <div class="text-wrapper">
-      <h1>It's all about being a <span>programmer</span> </h1>
-      <a href="#about" class="btn">See more</a>
+
+    <div class="container hero ">
+      <div class="text-wrapper">
+        <h1 class="title">It's all about being <span class="rotate">a programmer, creative, front-end developer </span>
+        </h1>
+        <h2>Welcome to my simple portfolio site. Enjoy exploring it and feel free to contact me for whaterver the
+          reason is.</h2>
+        <div> <a href="#about" class="btn btn-primary">See more</a> </div>
+      </div>
     </div>
+
+
+
 
 
   </header>
@@ -48,9 +78,12 @@
 {{--  About ME SECTION - short description of myselg and  CV  --}}
  {{--  =====================================================  --}} -->
   <div id="about" class="section">
-    <div class="container">
-      <div class="col-6">
-        <h1>About me</h1>
+    <div class="container" data-aos="fade-up">
+      <div class="section-header">
+        <h1 class="section-title">About Me</h1>
+      </div>
+      <div class="col-sm-6">
+
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ducimus voluptas quis repellat? Vero atque
           delectus corporis quaerat temporibus ipsa est inventore voluptas quos minus nostrum, veritatis expedita illum
           nulla provident corrupti? Ratione beatae velit veritatis assumenda quidem earum nisi voluptatibus, repellat
@@ -66,6 +99,41 @@
         </div>
         <p>something about courses I made</p>
       </div>
+
+      <div class="timeline" data-aos="fade-up">
+        <!-- container on teh left -->
+        <div class="inner-container left" data-aos="fade-up">
+          <div class="content-left">
+            <h2>Janruary 2015</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus ducimus corrupti voluptate
+              provident. Assumenda saepe recusandae totam nesciunt, eveniet optio?</p>
+          </div>
+        </div>
+        <!-- container on teh right -->
+        <div class="inner-container right" data-aos="fade-up">
+          <div class="content-right">
+            <h2>February 2016</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam illo iste et perferendis iure ad!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, neque!</p>
+          </div>
+        </div>
+        <!-- container on teh left -->
+        <div class="inner-container left" data-aos="fade-up">
+          <div class="content-left">
+            <h2>Janruary 2015</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus ducimus corrupti voluptate
+              provident. Assumenda saepe recusandae totam nesciunt, eveniet optio?</p>
+          </div>
+        </div>
+        <!-- container on teh right -->
+        <div class="inner-container right" data-aos="fade-up">
+          <div class="content-right">
+            <h2>February 2016</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam illo iste et perferendis iure ad!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, neque!</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <!-- 
@@ -78,14 +146,31 @@
 {{--  PORTFOLIO SECTION -my work --}}
  {{--  =====================================================  --}} -->
   <div id="portfolio" class="section">
-    <div class="container">
+    <div class="container" data-aos="fade-up">
+      <div class="section-header">
+        <h1 class="section-title">Portfolio</h1>
+      </div>
       <div class="row">
         <div class="col-md-6">
           <div class="image-wrapper">
             <img class="photo" src="https://unsplash.it/400x400" alt="">
-            <div class="image-description">
-              <p>some text about this work</p>
-            </div>
+            <figure class="image-description">
+              <figcaption>
+                <h2>Blog React</h2>
+                <p>some text about this work</p>
+              </figcaption>
+
+              <a href="http://">
+                <svg class="plus" enable-background="new 0 0 100 100" id="Layer_1" version="1.1" viewBox="0 0 100 100"
+                  xml:space="preserve">
+                  <polygon points="80.2,51.6 51.4,51.6 51.4,22.6 48.9,22.6 48.9,51.6 19.9,51.6 19.9,54.1 48.9,54.1 48.9,83.1 51.4,83.1 51.4,54.1 80.4,54.1 80.4,51.6 " />
+                </svg>
+              </a>
+              <figcaption class="project-icons">
+                <i class="fab fa-css3"></i>
+              </figcaption>
+
+            </figure>
           </div>
         </div>
 
@@ -123,16 +208,44 @@
 
   <!-- {{--  CONTACT SECTION - contact form with some info  --}}
  {{--  =====================================================  --}} -->
-  <div id="contact" class="section"></div>
+  <div id="contact" class="section">
+    <div class="container" data-aos="fade-up">
+      <div class="section-header">
+        <h1 class="section-title">Contact</h1>
+      </div>
+      <form action="action_page.php">
+        <div class="container">
+          <div class="col-md-6">
+            <label for="email">Enter Your e-mail:</label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="name"><b>Enter Your name:</b></label>
+            <input type="text" placeholder="Enter Name" name="name" required>
+
+            <label for="message">Write a message:</label>
+            <textarea name="message" id="message" rows="10" placeholder="Enter Message" required></textarea>
+            <button type="submit" class="btn btn-primary">Send</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
 
 
   <footer>
-
+    <p>copyright 2018</p>
   </footer>
 
   <!-- {{--  scripts  --}} -->
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/inview.min.js"></script>
+  <script src="/public/vendor/morphext.js"></script>
+  <script src="/public/vendor/anime.min.js"></script>
   <script src="/public/js/main.js"></script>
 </body>
 
