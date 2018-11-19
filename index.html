@@ -8,12 +8,12 @@
   <title>Portfolio Site</title>
   <link rel="shortcut icon" href="/public/img/favicon_black2.png" type="image/x-icon">
 
-  {{-- custom css styles --}}
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-    crossorigin="anonymous">
+  <!-- {{-- custom css styles --}} -->
+
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="/public/css/__normalize.css">
-  <link rel="stylesheet" href="/public/vendor/bootstrap/bootstrap-grid.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  <!-- <link rel="stylesheet" href="/public/vendor/bootstrap/bootstrap-grid.css"> -->
   <link rel="stylesheet" href="/public/vendor/Animate.css">
   <link rel="stylesheet" href="/public/vendor/morphext.css">
   <link rel="stylesheet" href="/public/css/style.min.css">
@@ -25,46 +25,54 @@
   <!-- {{--  NAVBAR  --}}
   {{--  =====================================================  --}} -->
 
-  <nav data-scroll-header>
+
+  <nav class="navbar navbar-expand-md">
     <div class="container">
-      <ul class="main">
-        <li>
-          <a id="brand" href="#home">
-            <svg class="logo" width="100%" height="100%" viewBox="0 0 272 243" version="1.1" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-              <g>
-                <path d="M49,243l27,0l0,-50l53,-52l102,102l37,0l-120,-120.97l124,-121.178l-38,0l-185,181.148" />
-                <path d="M26,243l-26,0l0,-181c0,-35.122 26.218,-62 55,-62l104,0c18.59,4.292 24.807,25.826 14,40l-147,140l0,63Zm122,-216l-89,0c-26.151,0 -33,16.968 -33,35l0,81.464l122,-116.464Z" />
-              </g>
-            </svg>
-            <svg class="logo2" width="100%" height="100%" viewBox="0 0 211 243" version="1.1" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
-              <g>
-                <path d="M0,242.148l13,0l65,-242.148l-13,0" />
-                <path d="M88.266,0l16.734,0l106,116.148l-104,126l-15.734,0l102.734,-126" />
-              </g>
-            </svg>
-          </a>
-        </li>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About me</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+
+
+      <a class="navbar-brand" id="brand" href="#home">
+        <svg class="logo" width="100%" height="100%" viewBox="0 0 272 243" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+          <g>
+            <path d="M49,243l27,0l0,-50l53,-52l102,102l37,0l-120,-120.97l124,-121.178l-38,0l-185,181.148" />
+            <path d="M26,243l-26,0l0,-181c0,-35.122 26.218,-62 55,-62l104,0c18.59,4.292 24.807,25.826 14,40l-147,140l0,63Zm122,-216l-89,0c-26.151,0 -33,16.968 -33,35l0,81.464l122,-116.464Z" />
+          </g>
+        </svg>
+        <svg class="logo2" width="100%" height="100%" viewBox="0 0 211 243" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+          <g>
+            <path d="M0,242.148l13,0l65,-242.148l-13,0" />
+            <path d="M88.266,0l16.734,0l106,116.148l-104,126l-15.734,0l102.734,-126" />
+          </g>
+        </svg>
+      </a>
+      <div class="navbar-toggler hidden-lg-up nav-mobile"><a id="toggle-btn" data-toggle="collapse" data-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId" href="#!"><span></span></a></div>
+      <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav main">
+          <li class="nav-item"><a class=" active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="" href="#about">About me</a></li>
+          <li class="nav-item"><a class="" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="" href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
+
+
   <!-- {{--  HOME SECTION - landing page and jumbotron  --}}
  {{--  =====================================================  --}} -->
   <header id="home" class="section">
-    <div class="overlay"></div>
+    <div class="overlay">
+    </div>
 
     <div class="container hero ">
       <div class="text-wrapper">
-        <h1 class="title">It's all about being <span class="rotate">a programmer, creative, front-end developer </span>
-        </h1>
-        <h2>Welcome to my simple portfolio site. Enjoy exploring it and feel free to contact me for whaterver the
-          reason is.</h2>
+        <h2 class="title">It's all about being <span class="rotate">a programmer, creative, a front-end developer,
+            helpful, a team player</span>
+        </h2>
+        <h4>Welcome to my simple portfolio site. Enjoy exploring it and feel free to contact me for whaterver the
+          reason is.</h4>
         <div> <a href="#about" class="btn btn-primary">See more</a> </div>
       </div>
     </div>
@@ -213,32 +221,80 @@
       <div class="section-header">
         <h1 class="section-title">Contact</h1>
       </div>
-      <form action="action_page.php">
-        <div class="container">
+
+      <div class="container">
+        <!-- column on the left -->
+        <div class="row">
+
+
           <div class="col-md-6">
-            <label for="email">Enter Your e-mail:</label>
-            <input type="text" placeholder="Enter Email" name="email" required>
+            <form action="action_page.php">
+              <label for="email">Enter Your e-mail:</label>
+              <input type="text" placeholder="Enter Email" name="email" required>
 
-            <label for="name"><b>Enter Your name:</b></label>
-            <input type="text" placeholder="Enter Name" name="name" required>
+              <label for="name"><b>Enter Your name:</b></label>
+              <input type="text" placeholder="Enter Name" name="name" required>
 
-            <label for="message">Write a message:</label>
-            <textarea name="message" id="message" rows="10" placeholder="Enter Message" required></textarea>
-            <button type="submit" class="btn btn-primary">Send</button>
+              <label for="message">Write a message:</label>
+              <textarea name="message" id="message" rows="10" placeholder="Enter Message" required></textarea>
+              <button type="submit" class="btn btn-primary">Send</button>
+            </form>
           </div>
+          <!-- column on the right  -->
+          <div class="col-md-6">
 
+            <div class="personal-info">
+              <div class="info-tab">
+                <i class="personal-icon fas fa-male"></i>
+                <p>Patryk Kurzeja</p>
+              </div>
+              <div class="info-tab">
+                <i class="personal-icon fas fa-map-marker-alt"></i>
+                <p>Wrocław</p>
+              </div>
+              <div class="info-tab">
+                <i class="personal-icon fas fa-mobile-alt"></i>
+                <p>782 226 103</p>
+              </div>
+              <div class="info-tab">
+                <i class="personal-icon far fa-envelope"></i>
+                <p><a href="mailto: patrick.kurzeja@gmail.com"> patrick.kurzeja@gmail.com</a></p>
+              </div>
+              <div class="info-tab">
+                <p>
+                  Feel free to contact me using this form or by phone or mail directly. If you have any questions that
+                  I can answer, then go ahead and write.
+                </p>
+                <p>
+                  You can also find me on Github, Facebook and Instagram - links are below</p>
+
+              </div>
+            </div>
+
+
+          </div>
         </div>
-      </form>
+      </div>
+
     </div>
   </div>
 
 
   <footer>
-    <p>copyright 2018</p>
+    <div class="container">
+      <col-6>
+        <p>copyright 2018</p>
+      </col-6>
+
+    </div>
+
   </footer>
 
   <!-- {{--  scripts  --}} -->
-  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
