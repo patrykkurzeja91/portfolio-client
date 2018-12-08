@@ -74,7 +74,7 @@ const sendMail = () => {
 
     let name = $('#input_name').val()
     let email = $('#input_email').val()
-    let message = $('#input_text').val()
+    let message = $('#input_text').val().replace(/\r\n|\r|\n/g,"<br />")
 
     if (name == '' || message == '') {
       $('#error_message').html('Errorrrr')
