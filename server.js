@@ -1,6 +1,7 @@
 const express = require("express"),
 	app = express(),
 	bodyParser = require("body-parser");
+	const sgMail = require('@sendgrid/mail');
 
 // port
 const PORT = process.env.PORT || 5000,
@@ -37,28 +38,43 @@ app.post('/sendMail', (req, res) => {
 	<p>Message: ${req.body.message}</p>
 	`
 
-	var api_key = process.env.MAILGUN_API
-	var domain = process.env.MAILGUN_DOMAIN
-	var mailgun = require('mailgun-js')({
-		apiKey: api_key,
-		domain: domain
-	});
+	// var api_key = 'key-7c454bdc34628a823ea641298f644297'
+	// var domain = 'pk.design.com'
+	// var mailgun = require('mailgun-js')({
+	// 	apiKey: api_key,
+	// 	domain: domain
+	// });
 
-	var data = {
-		from: 'PORTFOLIO SITE <me@samples.mailgun.org>',
-		to: process.env.MAIL,
-		subject: 'Hello from the App',
-		text: 'Mailgun awesomeness!',
-		html: output
-	};
+	// var data = {
+	// 	from: 'PORTFOLIO SITE <me@samples.mailgun.org>',
+	// 	to: 'patrick.kurzeja@gmail.com',
+	// 	subject: 'Hello from the App',
+	// 	text: 'Mailgun awesomeness!',
+	// 	html: output
+	// };
 
-	mailgun.messages().send(data, function (error, body) {
-		if (error) {
-			res.status(500).send('Something went wrong');
-		}
-		res.status(200).send('<i class="far fa-check-circle"></i>');
-	});
+	// mailgun.messages().send(data, function (error, body) {
+	// 	if (error) {
+	// 		res.status(500).send('Something went wrong');
+	// 	}
+	// 	res.status(200).send('<i class="far fa-check-circle"></i>');
+	// });
 
+	
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const msg = {
+  to: 'patrick.kurzeja@gmail.com',
+  from: 'PORTFOLIO SITE <noreply@portfoliopk.com>',
+  subject: 'Sent by SendGrid',
+  text: 'Message genarated with Your portfolio form',
+  html: output,
+};
+sgMail.send(msg, function (err) {
+	if (err) {
+				res.status(500).send('Something went wrong');
+			}
+			res.status(200).send('<i class="far fa-check-circle"></i>');
+		});
 });
 
 
