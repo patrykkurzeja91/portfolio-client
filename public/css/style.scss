@@ -254,7 +254,7 @@ transition: all ease 200ms;
 #home {
 	margin: 0;
 	// background: rgb(0,0,0);
-	background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6)), url('/public/img/yellow.jpg') no-repeat center;
+	background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6));
 	background-attachment: fixed;
 	background-size: cover;
 	height: 100vh;

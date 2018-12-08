@@ -3,7 +3,7 @@ const express = require("express"),
 	bodyParser = require("body-parser");
 
 // port
-const PORT = 5000 || process.env.PORT,
+const PORT = process.env.PORT || 5000,
 	IP = process.env.IP;
 
 
@@ -14,8 +14,9 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 app.set('views', __dirname);
-// app.engine('html', require('ejs').renderFile);
-app.set("view engine", 'ejs');
+app.engine('html', require('ejs').renderFile);
+// app.set("view engine", 'ejs');
+app.set("view engine", 'html');
 app.use(express.static(__dirname + '/public'));
 
 

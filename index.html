@@ -6,17 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Portfolio Site</title>
-  <link rel="shortcut icon" href="./img/favicon_black2.png" type="image/x-icon">
+  <link rel="shortcut icon" href="img/favicon_black2.png" type="image/x-icon">
 
   <!-- {{-- custom css styles --}} -->
 
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="./css/__normalize.css">
+  <link rel="stylesheet" href="css/__normalize.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
   <!-- <link rel="stylesheet" href="/vendor/bootstrap/bootstrap-grid.css"> -->
-  <link rel="stylesheet" href="./vendor/Animate.css">
-  <link rel="stylesheet" href="./vendor/morphext.css">
-  <link rel="stylesheet" href="./css/style.min.css">
+  <link rel="stylesheet" href="vendor/Animate.css">
+  <link rel="stylesheet" href="vendor/morphext.css">
+  <link rel="stylesheet" href="css/style.min.css">
 
   <!-- {{--  scripts  --}} -->
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -28,9 +28,9 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/inview.min.js"></script>
-  <script src="/vendor/morphext.js"></script>
-  <script src="/vendor/anime.min.js"></script>
-  <script src="/js/main.js"></script>
+  <script src="vendor/morphext.js"></script>
+  <script src="vendor/anime.min.js"></script>
+  <script src="js/script.js"></script>
 </head>
 
 <body>
@@ -78,7 +78,9 @@
   <header id="home" class="section">
 
     <div class="video-container">
-      <video class="video" src="./video/video.mp4" loop="true" autoplay="true"></video>
+      <video class="video" loop="true" autoplay="true">
+        <source src="video/video.mp4"/>
+      </video>
     </div>
     <div class="overlay">
     </div>
@@ -94,7 +96,7 @@
     </div>
 
 
-fa5-tic
+
 
 
   </header>
@@ -244,9 +246,9 @@ fa5-tic
         <!-- column on the left -->
         <div class="row">
 
-
           <div class="col-md-6">
-            <form action="sendMail" method="POST">
+            <form action="sendMail" method="POST" id="myForm">
+
               <label for="email">Enter Your e-mail:</label>
               <input id="input_email" type="text" placeholder="Enter Email" name="email" required>
 
@@ -255,12 +257,23 @@ fa5-tic
 
               <label for="message">Write a message:</label>
               <textarea id="input_text" name="message" id="message" rows="10" placeholder="Enter Message" required></textarea>
-              <button type="submit" class="btn btn-primary">Send</button>
+              <button id="send_btn" type="submit" class="btn btn-primary">Send
+                <div id="success-message">
+                  <div class="lds-dual-ring"></div>
+                  <div class="loader-icon">
+                    </i>
+                  </div>
+                </div>
+
+              </button>
+
             </form>
+            <div class="messages">
+              <h4>Email has been sent succesfully</h4>
+            </div>
           </div>
           <!-- column on the right  -->
           <div class="col-md-6">
-
             <div class="personal-info">
               <div class="info-tab">
                 <i class="personal-icon fas fa-male"></i>
