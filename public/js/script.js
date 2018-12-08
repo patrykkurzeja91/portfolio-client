@@ -1,5 +1,12 @@
-$(document).ready(() => {
+$(() => {
   //reload on resize
+
+
+  const preload = document.getElementsByClassName('preload')[0];
+preload.classList.add('show-preloader');
+window.addEventListener('load', function () {
+    preload.classList.remove('show-preloader');
+});
   $(window).resize(function () {
     let resizeId
     clearTimeout(resizeId)
@@ -72,9 +79,9 @@ const sendMail = () => {
     e.preventDefault()
     $('.lds-dual-ring').addClass('show')
 
-    let name = $('#input_name').val()
-    let email = $('#input_email').val()
-    let message = $('#input_text').val().replace(/\r\n|\r|\n/g,"<br />")
+    const name = $('#input_name').val()
+    const email = $('#input_email').val()
+    const message = $('#input_text').val()
 
     if (name == '' || message == '') {
       $('#error_message').html('Errorrrr')
@@ -102,8 +109,6 @@ const sendMail = () => {
     }
   })
 }
-
-
 
 let parallaxHero = () => {
   $(window).scroll(function () {

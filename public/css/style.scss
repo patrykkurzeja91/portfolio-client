@@ -73,7 +73,6 @@ body {
 	}
 }
 
-
 .transparent {
  background: transparent !important;
 }
@@ -97,7 +96,13 @@ transition: all ease 200ms;
 		margin-left: 0;
 		margin-right: auto;
 		padding: 0;
-
+		.preloading-brand {
+			position: absolute;
+			transform: scale(4);
+			top: 50%;
+			left: 50%;
+			z-index: 10000001;
+		}
 
 		&:hover .logo {
 			fill: $color-primary;
@@ -254,7 +259,7 @@ transition: all ease 200ms;
 #home {
 	margin: 0;
 	// background: rgb(0,0,0);
-	background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6));
+	background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6)) url('img/2018-12-08.png');
 	background-attachment: fixed;
 	background-size: cover;
 	height: 100vh;
@@ -326,7 +331,7 @@ transition: all ease 200ms;
 
 @supports (-ms-ime-align: auto) {
 	#home {
-		background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6)), url('/public/img/yellow.jpg') no-repeat scroll center;
+		background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6)), url('../img/bgcode.png') no-repeat scroll center;
 		background-attachment: scroll;
 	}
 }
@@ -654,4 +659,69 @@ transition: all ease 200ms;
 }
 .show {
 	display: block;
+}
+
+
+//preloader
+.preload
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10000;
+    visibility: hidden;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: #10131a;
+    transition: opacity 400ms ease-in-out, visibility 0s 400ms;
+}
+
+.show-preloader
+{
+    visibility: visible;
+    opacity: 1;
+}
+
+.circle
+{
+    background-color: $color-primary;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    animation: bounce-circles 0.7s infinite ease-in-out;
+}
+
+.preload .circle:nth-child(1)
+{
+     animation-delay: -0.6s;
+}
+
+.preload .circle:nth-child(2) 
+{
+     animation-delay: -0.5s;
+}
+
+.preload .circle:nth-child(3) 
+{
+     animation-delay: -0.4s;
+}
+
+.preload .circle:nth-child(4) 
+{
+    animation-delay: -0.3s;
+}
+
+@keyframes bounce-circles
+{
+    0%, 40%, 100% 
+    {
+	transform: translateY(-10px);
+    } 20% 
+    {
+	transform: translateY(-20px);
+    }
 }
