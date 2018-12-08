@@ -63,5 +63,5 @@ app.post('/sendMail', (req, res) => {
 
 
 app.listen(PORT, IP, () => {
-	console.log(`YelpCamp Server runs smoothly at ${PORT}`);
+	console.log(`Server runs smoothly at ${PORT}`);
 });
