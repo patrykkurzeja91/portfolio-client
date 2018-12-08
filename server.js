@@ -67,7 +67,8 @@ const msg = {
   from: 'PORTFOLIO SITE <noreply@portfoliopk.com>',
   subject: 'Sent by SendGrid',
   text: 'Message genarated with Your portfolio form',
-  html: output,
+	html: output,
+	proxy: false,
 };
 sgMail.send(msg, function (err) {
 	if (err) {
