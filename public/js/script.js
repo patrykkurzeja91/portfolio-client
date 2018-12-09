@@ -1,12 +1,13 @@
 $(() => {
-  //reload on resize
-
-
-  const preload = document.getElementsByClassName('preload')[0];
-preload.classList.add('show-preloader');
-window.addEventListener('load', function () {
+  (function(){
+    const preload = document.getElementsByClassName('preload')[0];
+    preload.classList.add('show-preloader');
+    window.addEventListener('load', function () {
     preload.classList.remove('show-preloader');
-});
+  });
+  }())
+
+  //reload on resize
   $(window).resize(function () {
     let resizeId
     clearTimeout(resizeId)
