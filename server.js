@@ -1,12 +1,12 @@
 const express = require("express"),
 	app = express(),
-	bodyParser = require("body-parser");
-	const sgMail = require('@sendgrid/mail');
+	bodyParser = require("body-parser"),
+	sgMail = require('@sendgrid/mail')
+
 
 // port
 const PORT = process.env.PORT || 5000,
 	IP = process.env.IP;
-
 
 require('dotenv').config();
 //settings
@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 });
 
 app.post('/sendMail', (req, res) => {
-	console.log('the body of form:', req.body)
+	// console.log('the body of form:', req.body)
 	const output = `
 	<h3>You have new message from Your Portfolio site</h3>
 	<p>Contact details:</p>
@@ -57,7 +57,8 @@ sgMail.send(msg, function (err) {
 });
 
 
-
 app.listen(PORT, IP, () => {
 	console.log(`Server runs smoothly at ${PORT}`);
 });
+
+

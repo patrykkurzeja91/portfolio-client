@@ -16,11 +16,14 @@
     "express-edge": "^1.0.0",
     "express-livereload": "0.0.24",
     "express-messages": "^1.0.1",
+    "express-recaptcha": "^4.1.1",
     "express-session": "^1.15.6",
     "jquery": "^3.3.1",
     "mailgun-js": "^0.22.0",
     "nodemailer": "^4.7.0",
     "nodemailer-mailgun-transport": "^1.4.0",
+    "pretty-checkbox": "^3.0.3",
+    "request": "^2.88.0",
     "sendgrid": "^5.2.3"
   },
   "devDependencies": {

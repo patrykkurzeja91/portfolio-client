@@ -13,12 +13,13 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/__normalize.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
   <link rel="stylesheet" href="vendor/Animate.css">
   <link rel="stylesheet" href="vendor/morphext.css">
   <link rel="stylesheet" href="css/style.min.css">
 
+
   <!-- {{--  scripts  --}} -->
-  
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
@@ -31,6 +32,7 @@
   <script src="vendor/morphext.js"></script>
   <script src="vendor/anime.min.js"></script>
   <script src="js/script.js"></script>
+
 </head>
 
 <body>
@@ -105,7 +107,7 @@
 
 
   </header>
-  <!-- 
+  <!--
 {{--  About ME SECTION - short description of myselg and  CV  --}}
  {{--  =====================================================  --}} -->
   <div id="about" class="section">
@@ -114,21 +116,34 @@
         <h1 class="section-title">About Me</h1>
       </div>
       <div class="col-sm-6">
+        <p>
+          I am a young Civil Engineer who decided to change his life and start creating websites!
+        </p>
+        <p>
+          I started to make my first steps in the front-end over a year ago and it started to give me so much fun and
+          satisfaction that programming became my passion. I am currently working as a construction designer, but I am
+          looking for a job as a Junior Front end developer. Every day I find at least an hour to write a code, learn
+          something new or fix previously made websites.
+        </p>
+        <p>
+          Apart from programming, I'm also interested in sports (above all football, crossfit and snowboarding), simple
+          photo and video editing, reading about technological trends, reading fantasy novels and crime stories and
+          playing computer games.
+        </p>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ducimus voluptas quis repellat? Vero atque
-          delectus corporis quaerat temporibus ipsa est inventore voluptas quos minus nostrum, veritatis expedita illum
-          nulla provident corrupti? Ratione beatae velit veritatis assumenda quidem earum nisi voluptatibus, repellat
-          vel quas totam cupiditate minus provident exercitationem sunt!</p>
-        <div class="brands">
-          <i class="fab fa-html5"></i>
-          <i class="fab fa-css3"></i>
-          <i class="fab fa-js"></i>
-          <i class="fab fa-react"></i>
-          <i class="fab fa-node-js"></i>
-          <i class="fab fa-sass"></i>
-          <i class="fab fa-npm"></i>
-        </div>
-        <p>something about courses I made</p>
+        </p>
+        <p>
+
+          <div class="brands">
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3"></i>
+            <i class="fab fa-js"></i>
+            <i class="fab fa-react"></i>
+            <i class="fab fa-node-js"></i>
+            <i class="fab fa-sass"></i>
+            <i class="fab fa-npm"></i>
+          </div>
+          <p>something about courses I made</p>
       </div>
 
       <div class="timeline" data-aos="fade-up">
@@ -167,13 +182,13 @@
       </div>
     </div>
   </div>
-  <!-- 
+  <!--
 {{--  TESTIMONIALS SECTION - few testimonials with OWl.js  --}}
  {{--  =====================================================  --}} -->
   <div id="testimonials" class="section">
 
   </div>
-  <!-- 
+  <!--
 {{--  PORTFOLIO SECTION -my work --}}
  {{--  =====================================================  --}} -->
   <div id="portfolio" class="section">
@@ -261,15 +276,25 @@
               <input id="input_name" type="text" placeholder="Enter Name" name="name" required>
 
               <label for="message">Write a message:</label>
-              <textarea id="input_text" name="message" id="message" rows="10" placeholder="Enter Message" required></textarea>
-              <button id="send_btn" type="submit" class="btn btn-primary">Send
-                <div id="success-message">
-                  <div class="lds-dual-ring"></div>
-                  <div class="loader-icon">
-                    </i>
-                  </div>
-                </div>
+                <textarea id="input_text" name="message" id="message" rows="10" placeholder="Enter Message" required></textarea>
+                <!-- <input type="checkbox" name="agree" id="captcha"> -->
 
+
+ <!-- using direct svg file -->
+ <div class="pretty p-icon p-plain p-bigger p-smooth">
+  <input type="checkbox" name="agree" id="captcha"/>
+  <div class="state p-default" >
+      <i class="icon fas fa-check"></i>
+      <label></label>
+  </div>
+</div>
+
+
+                <button id="send_btn" type="submit" class="btn btn-primary disabled" disabled>Send
+                  <div id="success-message">
+                  <div class="lds-dual-ring"></div>
+                  <div class="loader-icon"></div>
+                </div>
               </button>
 
             </form>
@@ -277,7 +302,7 @@
               <h4>Email has been sent succesfully</h4>
             </div>
           </div>
-          <!-- column on the right  -->
+          <!-- column on the right -->
           <div class="col-md-6">
             <div class="personal-info">
               <div class="info-tab">
@@ -325,7 +350,7 @@
     </div>
 
   </footer>
-  
+
 </body>
 
 </html>

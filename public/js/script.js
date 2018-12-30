@@ -1,10 +1,10 @@
 $(() => {
-  (function(){
+  (function () {
     const preload = document.getElementsByClassName('preload')[0];
     preload.classList.add('show-preloader');
     window.addEventListener('load', function () {
-    preload.classList.remove('show-preloader');
-  });
+      preload.classList.remove('show-preloader');
+    });
   }())
 
   //reload on resize
@@ -58,23 +58,40 @@ $(() => {
     speed: 400, // Integer. How fast to complete the scroll in milliseconds
     clip: false, // If true, adjust scroll distance to prevent abrupt stops near the bottom of the page
     offset: function () {
-      let navHeight = $('nav').innerHeight()
-      return navHeight / 2
+      if ($(window).innerWidth() < 768) {
+        return 0;
+      } else {
+        let navHeight = $('nav').innerHeight()
+        return navHeight / 2 //set offset: 0
+      }
     },
     easing: 'easeInOutCubic', // Easing pattern to use
     // History
     updateURL: false, // Update the URL on scroll
   })
-
+  checkedCaptcha();
   sendMail()
   parallaxHero()
   navbarFixing()
   toggleBtn()
   hideMenu()
   scrollActive()
+  hoverImage()
+  navbarHidingOnScroll()
 })
+let checkedCaptcha = () => {
+  let checkbox = $('input[name="agree"]')
+  checkbox.change(function () {
+    let checked = $(this).prop('checked')
+    if (checked) {
+      $('#send_btn').removeClass('disabled').removeAttr('disabled');
+    } else {
+      $('#send_btn').addClass('disabled').attr('disabled', 'true')
+    }
+  })
 
-//sending mail function
+}
+// sending mail function
 const sendMail = () => {
   $('#myForm').submit(function (e) {
     e.preventDefault()
@@ -162,7 +179,6 @@ let navbarFixing = () => {
   }
 
 }
-
 //active watching on navbar links
 let scrollActive = () => {
   let sections = $('.section')
@@ -181,9 +197,8 @@ let scrollActive = () => {
   })
 }
 
-
 let toggleBtn = () => {
-  $('#toggle-btn').on("click",function (e) {
+  $('#toggle-btn').on("click", function (e) {
     e.preventDefault()
     $(this).toggleClass('active')
   })
@@ -195,4 +210,29 @@ let hideMenu = () => {
     $('.navbar-collapse').toggleClass('show')
     $('#toggle-btn').toggleClass('active')
   })
+}
+
+const hoverImage = () => {
+  $(".image-description").on("mouseenter mouseleave touchstart", function (e) {
+    if (e.type == 'touchstart') {
+      $(this).off('mouseenter mouseleave')
+    }
+    $(this).toggleClass("hover");
+  });
+}
+
+/* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+const navbarHidingOnScroll = () => {
+  let prevScrollpos = window.pageYOffset;
+  if ($(window).innerWidth() < 768) {
+    $(window).scroll(function () {
+      let currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        $(".navbar").css("top", 0);
+      } else {
+        $(".navbar").css("top", "-80px");
+      }
+      prevScrollpos = currentScrollPos;
+    });
+  }
 }

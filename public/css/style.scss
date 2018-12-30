@@ -1,6 +1,7 @@
 @import '../vendor/bootstrap/scss/bootstrap.scss';
 @import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i|Montserrat:200,300,300i,400,400i,600');
 
+
 //variables
 
 $font-lato: "Lato",
@@ -9,6 +10,16 @@ $color-bg: #111;
 $color-primary: #faa916;
 $white: #fbfffe;
 
+/*! debug.css | MIT License | https://gist.github.com/zaydek/6b2e55258734deabbd2b4a284321d6f6 */
+[debug],
+[debug] *:not(g):not(path) {
+	color: hsla(210, 100%, 100%, 0.9) !important;
+	background: hsla(210, 100%, 50%, 0.5) !important;
+	outline: solid 0.25rem hsla(210, 100%, 100%, 0.5) !important;
+
+	box-shadow: none !important;
+	filter: none !important;
+}
 
 * {
 	margin: 0;
@@ -80,13 +91,18 @@ body {
 $logo-width: 30px;
 
 // NAVBAR
+.hidden-nav {
+	top: -100px;
+}
+
 .navbar {
 	position: fixed;
-	top: 0;
+	top: 0px;
 	z-index: 10;
 	background: $color-bg;
 	width: 100%;
-	transition: all ease 200ms;
+	transition: all ease 250ms;
+
 
 	.flex {
 		display: flex;
@@ -183,7 +199,6 @@ $logo-width: 30px;
 					margin-top: 5px;
 				}
 
-				&:active,
 				&:hover {
 					color: $color-primary;
 				}
@@ -322,6 +337,7 @@ $logo-width: 30px;
 			text-transform: uppercase;
 			font-size: 2rem;
 			margin-bottom: 1rem;
+
 			span {
 				display: block
 			}
@@ -340,15 +356,16 @@ $logo-width: 30px;
 
 	.to-about {
 		z-index: 3;
-		
+
 		&:hover {
 			.scroller-wrapper {
 				border: 1px solid $white;
+
 				.scroller-btn {
 					background: $white;
 				}
 			}
-			
+
 		}
 
 		.scroller-wrapper {
@@ -361,7 +378,7 @@ $logo-width: 30px;
 			width: 1.5rem;
 			height: 3rem;
 			transition: all 1000ms ease;
-			
+
 			.scroller-btn {
 				position: absolute;
 				top: 15%;
@@ -575,6 +592,7 @@ $logo-width: 30px;
 		position: relative;
 		padding-top: 15px;
 		padding-bottom: 15px;
+		overflow: hidden;
 
 		.photo {
 			display: block;
@@ -595,11 +613,13 @@ $logo-width: 30px;
 			margin: 0px auto;
 			padding: 20px 0;
 			text-align: center;
-			opacity: 1;
-			transition: opacity 500ms ease;
+			opacity: 0;
+			transform: scale(1.2);
+			transition: opacity 200ms ease, transform 300ms ease;
 
-			&:hover {
+			&.hover {
 				opacity: 1;
+				transform: scale(1);
 			}
 
 			figcaption {
@@ -640,6 +660,19 @@ $logo-width: 30px;
 }
 
 #contact {
+
+	#captcha {
+		height: 56px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.disabled {
+		cursor: not-allowed;
+		background: grey;
+	}
+
 	form {
 		label {
 			display: block;
@@ -657,9 +690,10 @@ $logo-width: 30px;
 			resize: none;
 		}
 
-		.btn {
+		#send_btn {
 			margin: 10px 0;
 			width: 100%;
+			cursor: pointer;
 		}
 	}
 
