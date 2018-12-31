@@ -13,7 +13,6 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/__normalize.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
   <link rel="stylesheet" href="vendor/Animate.css">
   <link rel="stylesheet" href="vendor/morphext.css">
   <link rel="stylesheet" href="css/style.min.css">
@@ -276,27 +275,28 @@
               <input id="input_name" type="text" placeholder="Enter Name" name="name" required>
 
               <label for="message">Write a message:</label>
-                <textarea id="input_text" name="message" id="message" rows="10" placeholder="Enter Message" required></textarea>
-                <!-- <input type="checkbox" name="agree" id="captcha"> -->
+              <textarea id="input_text" name="message" id="message" rows="8" placeholder="Enter Message" required></textarea>
+              <div class="row">
+                <div class="col-2">
+                  <input type="checkbox" id="cbx" style="display: none;" name="agree">
+<label for="cbx" class="check">
+  <svg width="32px" height="32px" viewBox="0 0 18 18">
+    <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+    <polyline points="1 9 7 14 15 4"></polyline>
+  </svg>
+</label>
 
-
- <!-- using direct svg file -->
- <div class="pretty p-icon p-plain p-bigger p-smooth">
-  <input type="checkbox" name="agree" id="captcha"/>
-  <div class="state p-default" >
-      <i class="icon fas fa-check"></i>
-      <label></label>
-  </div>
-</div>
-
-
-                <button id="send_btn" type="submit" class="btn btn-primary disabled" disabled>Send
-                  <div id="success-message">
-                  <div class="lds-dual-ring"></div>
-                  <div class="loader-icon"></div>
                 </div>
-              </button>
+                <div class="col-10">
+                  <button id="send_btn" type="submit" class="btn btn-primary disabled" disabled>Send
+                    <div id="success-message">
+                      <div class="lds-dual-ring"></div>
+                      <div class="loader-icon"></div>
+                    </div>
+                  </button>
 
+                </div>
+              </div>
             </form>
             <div class="messages">
               <h4>Email has been sent succesfully</h4>

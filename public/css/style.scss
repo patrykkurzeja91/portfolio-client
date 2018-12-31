@@ -9,6 +9,7 @@ Sans-serif !default;
 $color-bg: #111;
 $color-primary: #faa916;
 $white: #fbfffe;
+$md-midpoint: 768px;
 
 /*! debug.css | MIT License | https://gist.github.com/zaydek/6b2e55258734deabbd2b4a284321d6f6 */
 [debug],
@@ -150,7 +151,7 @@ $logo-width: 30px;
 			z-index: 1;
 		}
 
-		@media (max-width: 768px) {
+		@media (max-width: $md-midpoint) {
 			a:hover .logo {
 				fill: $white;
 			}
@@ -166,7 +167,7 @@ $logo-width: 30px;
 		display: flex;
 		margin-left: auto;
 
-		@media (max-width: 768px) {}
+		@media (max-width: $md-midpoint) {}
 
 		li {
 			margin-left: 1.5rem;
@@ -176,7 +177,7 @@ $logo-width: 30px;
 				margin-left: 1rem;
 			}
 
-			@media (max-width: 768px) {
+			@media (max-width: $md-midpoint) {
 				padding: 0;
 				font-size: 1.5rem;
 				text-align: center;
@@ -192,7 +193,7 @@ $logo-width: 30px;
 				text-transform: uppercase;
 				font-weight: 300;
 
-				@media (max-width: 768px) {
+				@media (max-width: $md-midpoint) {
 					display: block;
 					width: 100%;
 					padding: 10px 0 10px;
@@ -218,7 +219,7 @@ $logo-width: 30px;
 	height: 64px;
 	width: 64px;
 
-	@media (max-width: 768px) {
+	@media (max-width: $md-midpoint) {
 		display: flex;
 
 		#toggle-btn {
@@ -538,7 +539,7 @@ $logo-width: 30px;
 	}
 
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: $md-midpoint) {
 		.timeline {
 			&::after {
 				left: 31px;
@@ -660,23 +661,91 @@ $logo-width: 30px;
 }
 
 #contact {
+	.col-2 {
+		margin: 10px auto;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
-	#captcha {
-		height: 56px;
+//checkbox captcha
+.check {
+	cursor: pointer;
+	position: relative;
+	left: 20%;
+	margin: auto;
+	width: 32px;
+	height: 32px;
+	-webkit-tap-highlight-color: transparent;
+	transform: translate3d(0, 0, 0);
+	&:before {
+		content: "";
 		position: absolute;
-		top: 0;
-		left: 0;
+		top: -25%;
+		left: -25%;
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		background: rgba(34,50,84,0.03);
+		opacity: 0;
+		transition: opacity 0.2s ease;
 	}
-
-	.disabled {
-		cursor: not-allowed;
-		background: grey;
+	svg {
+		position: relative;
+		z-index: 1;
+		fill: none;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke: #c8ccd4;
+		stroke-width: 1.5;
+		transform: translate3d(0, 0, 0);
+		transition: all 0.2s ease;
+		path {
+			stroke-dasharray: 60;
+			stroke-dashoffset: 0;
+		}
+		polyline {
+			stroke-dasharray: 22;
+			stroke-dashoffset: 66;
+		}
 	}
+	&:hover {
+		&:before {
+			opacity: 1;
+		}
+		svg {
+			stroke: $color-primary;
+		}
+	}
+}
+#cbx {
+	&:checked {
+		&+.check {
+			svg {
+				stroke: $color-primary;
+				path {
+					stroke-dashoffset: 60;
+					transition: all 0.3s linear;
+				}
+				polyline {
+					stroke-dashoffset: 42;
+					transition: all 0.2s linear;
+					transition-delay: 0.15s;
+				}
+			}
+		}
+	}
+}
 
+//======end
 	form {
 		label {
 			display: block;
 			margin-bottom: .8rem;
+			@media screen and (max-width: $md-midpoint) {
+				margin-bottom: .6rem;
+			}
 		}
 
 		input,
@@ -688,12 +757,23 @@ $logo-width: 30px;
 			padding: 20px 20px;
 			min-width: 100%;
 			resize: none;
+			@media screen and (max-width: $md-midpoint) {
+				margin-bottom: 1rem;
+				padding: 12px 12px;
+
+			}
 		}
 
 		#send_btn {
 			margin: 10px 0;
 			width: 100%;
+			transition: all ease 300ms;
 			cursor: pointer;
+		}
+
+		.disabled {
+			cursor: not-allowed;
+			background: grey;
 		}
 	}
 
@@ -711,6 +791,7 @@ $logo-width: 30px;
 			text-align: center;
 		}
 	}
+
 }
 
 // loaders
